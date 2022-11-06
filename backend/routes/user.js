@@ -51,7 +51,7 @@ router.get(
 
 router.put(
 	"/:id",
-	[isValidObjectId,validate(validator)],
+	isValidObjectId,
 	asyncHandler(async(req,res)=>{
 		
 		await User.findByIdAndUpdate({_id: req.params.id},req.body);
